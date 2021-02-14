@@ -1,39 +1,45 @@
 #include <stdio.h>
 
-// start by creating a struct for the bits
-typedef struct  {
-
-    unsigned int bit0:1; //this is LSB
-    unsigned int bit1:1; //bit 1
+typedef struct {
+    unsigned int bit0:1; //least significant bit
+    unsigned int bit1:1;
     unsigned int bit2:1;
     unsigned int bit3:1;
     unsigned int bit4:1;
     unsigned int bit5:1;
     unsigned int bit6:1;
-    unsigned int bit7:1;
-    unsigned int bit8:1;
-}charbits;
+    unsigned int bit7:1; //MSB
+} Byte;
+
+void* vp;
+
+typedef struct{
+    Byte by1;
+    Byte by2;
+    Byte by3;
+    Byte by4;
+} bytes4;
 
 
 int main()
 {
-    // now assume we have a char to be converted into its bits
-    char a = 'a'; //asci of a is 97
-    charbits *x;   //this is the character bits to be converted to
-    // first convert the char a to void pointer
-    void* p; //this is a void pointer
-    p=&a;    // put the address of a into p
-    //now convert the void pointer to the struct pointer
-    x=(charbits *) p;
+    unsigned char x='a'; //asc a = 97 => 01100001
+    vp = &x;
+    //convert void pointer to struct pointer
+    Byte* b;
+    b=vp;
 
-    // now print the contents of the struct
-    printf("b0 %d b1 %d b2 %d b3 %d b4 %d b5 %d b6 %d b7 %d b8 %d", x->bit0,x->bit1, x->bit2,x->bit3, x->bit4, x->bit5, x->bit6, x->bit7, x->bit8);
+    printf("b0%d b1%d b2%d b3%d b4%d b5%d b6%d b7%d\n",b->bit0, b->bit1, b->bit2, b->bit3, b->bit4, b->bit5, b->bit6, b->bit7);
 
-    // 97 has bits like this 01100001
-    //b0 1 b1 0 b2 0 b3 0 b4 0 b5 1 b6 1 b7 0 b8 0
-    // now we see that bit 0 is the LSB which is the first one in the struct
 
-    // thank you and i hope this helps
+    // fill the 4 bytes
+    int p = 32; //00000000 00000000 00000000 00100000
+    vp = &p;
+    bytes4* b4;
+    b4=vp;
+    printf("bit 5 = %d \n", b4->by1.bit5);
+
+    // C11
 
     return 0;
 }
