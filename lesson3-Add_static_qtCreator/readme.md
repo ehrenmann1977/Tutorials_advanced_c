@@ -19,7 +19,8 @@ But working under Windows is relatively hard because there are different compile
 a static libaray needs to have it compiled by the same compiler that you will use to compile the project.
 
 There are different MinGW compilers, 64 and 32 bits, with _64 and without. There are two approaches
-- 1. compile the static library on your PC. 
+- 1. compile the static library on your PC.
+
 Disadvantage:
 you may find the project available for Visual Studio, and this means that you need to rewrite 
 your project under visual studio. There will be difficulties compiling an open source project with Qmake.
@@ -40,24 +41,24 @@ I used the following https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20210228
 the following location  D:\msys2\
 
 - Run MSys2 and install the following packages as follows
-	    1  pacman -S mingw-w64-x86_64-libusb  #this is the libusb package i need 
-		2  pacman -Su
-		3 pacman -S mingw-w64-x86_64-gcc
-		4  gcc -v #to make sure gcc is installed 
-	    5  g++ -v # check g++ compiler 
-	    6  pacman -S make
-	    7  pacman --needed -S mingw-w64-x86_64-toolchain 
-	    8  pacman --needed -S mingw-w64-x86_64-toolchain (choose 9 for mingw-w64-x86_64-make  )
-	    9  pacman -Sy --needed
-	   10  pacman --needed -S bash
-	   11  make -h #test make is available
+ - 1  pacman -S mingw-w64-x86_64-libusb  #this is the libusb package i need 
+ - 2  pacman -Su
+ - 3 pacman -S mingw-w64-x86_64-gcc
+ - 4  gcc -v #to make sure gcc is installed 
+ - 5  g++ -v # check g++ compiler 
+ - 6  pacman -S make
+ - 7  pacman --needed -S mingw-w64-x86_64-toolchain 
+ - 8  pacman --needed -S mingw-w64-x86_64-toolchain (choose 9 for mingw-w64-x86_64-make  )
+ - 9  pacman -Sy --needed
+ - 10  pacman --needed -S bash
+ - 11  make -h #test make is available
 
 - Add the compiler to Qt Creator
 	Inside Tools->Options->Compilers Click on Add Manual GCC Compier
 	for the C Language, the compiler path is: D:\msys2\mingw64\bin\gcc.exe
 	for the C++ Language, use the compiler g++ located at D:\msys2\mingw64\bin\g++.exe
 	
-	Now goto Kits: Clone any available kit and 
+	Now go to Kits: Clone any available kit and 
 	  Set compiler to use Msys2 Gcc and G++ that were defined last step
 	  
 - Now create a new project, lets call it cmakecompile that uses cmakecompile
@@ -79,9 +80,9 @@ the following location  D:\msys2\
 			return 0;
 		}
 
-- Now compile as a relaese because the libusb added is not a debug file, here is the output i got
-	12:28:16: Starting C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe ...
-	12:28:16: C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe exited with code 0
+- Now compile as a release because the libusb added is not a debug file, here is the output i got
+	-	12:28:16: Starting C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe ...
+	-	12:28:16: C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe exited with code 0
 	
-	12:29:30: Starting C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe ...
-	12:29:30: C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe exited with code 0
+	-	12:29:30: Starting C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe ...
+	-	12:29:30: C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe exited with code 0
