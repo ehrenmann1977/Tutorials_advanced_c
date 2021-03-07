@@ -9,6 +9,7 @@ I want to show here how to compile a project with libusb as a static under windo
 
 - [Precautions](#Precautions)
 - [Installation](#Installation)
+- [Examples](#Examples)
 
 <!-- tocstop -->
 
