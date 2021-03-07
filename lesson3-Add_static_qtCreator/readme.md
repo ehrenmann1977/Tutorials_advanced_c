@@ -16,7 +16,7 @@ I want to show here how to compile a project with libusb as a static under windo
 ## Precautions 
 Working under linux or mac is easy because the library would be installed by a package manger. 
 But working under Windows is relatively hard because there are different compilers and adding 
-a static libaray needs to have it compiled by the same compiler that you will compile the project.
+a static libaray needs to have it compiled by the same compiler that you will use to compile the project.
 
 There are different MinGW compilers, 64 and 32 bits, with _64 and without. There are two approaches
 - 1. compile the static library on your PC. 
