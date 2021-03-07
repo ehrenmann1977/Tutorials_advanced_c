@@ -86,3 +86,9 @@ the following location  D:\msys2\
 	
 	-	12:29:30: Starting C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe ...
 	-	12:29:30: C:\Users\SHERIF\Desktop\USBProject\build-cmakecompile-Desktop_Qt_5_15_2_MSYS2_G_64_bit-Release\cmakecompile.exe exited with code 0
+
+## Examples
+
+To have some examples, use the following link https://libusb.info, download the windows binary which has a folder called examples
+
+Note that this is the same library compiled and installed by MSys2. There are different libraries for lusb and some have very similar names.There is another library called  libusb-32 which has a different initialization method and differnt functions. But this one is the widely used one.
