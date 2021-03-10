@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "D:\msys2\mingw64\include\libusb-1.0\libusb.h"
+#include "libusb.h"
 
 
 int main(int argc, char *argv[])
