@@ -53,6 +53,8 @@ the following location  D:\msys2\
  - 9  pacman -Sy --needed
  - 10  pacman --needed -S bash
  - 11  make -h #test make is available
+ - Install the gdb debugger
+ -     pacman -S mingw-w64-x86_64-gdb 
 
 - Add the compiler to Qt Creator
 	Inside Tools->Options->Compilers Click on Add Manual GCC Compier
